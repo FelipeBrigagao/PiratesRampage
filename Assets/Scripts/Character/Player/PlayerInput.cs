@@ -30,12 +30,12 @@ public class PlayerInput : MonoBehaviour
        _player.PlayerMovement.ReceiveInput(_moveInput);
     }
 
-    public void StartReceiveInput()
+    public void EnableReceiveInput()
     {
         _canReceiveInput = true;
     }
     
-    public void StopReceiveInput()
+    public void DisableReceiveInput()
     {
         _canReceiveInput = false;
     }

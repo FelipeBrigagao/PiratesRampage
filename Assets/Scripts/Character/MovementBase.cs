@@ -22,12 +22,12 @@ public abstract class MovementBase : MonoBehaviour
     protected abstract void Move();
     protected abstract void Rotate();
 
-    public void StartMovement()
+    public void EnableMovement()
     {
         _canMove = true;
     }
     
-    public void StopMovement()
+    public void DisableMovement()
     {
         _canMove = false;
     }

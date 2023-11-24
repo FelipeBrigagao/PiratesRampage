@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
 
     public void Init()
     {
-        _playerInput.StartReceiveInput();
-        _playerMovement.StartMovement();
+        _playerInput.EnableReceiveInput();
+        _playerMovement.EnableMovement();
     }
     
 }
