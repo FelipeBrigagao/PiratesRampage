@@ -17,7 +17,6 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] protected float _bulletShootForce;
     [SerializeField] protected float _bulletLifespan;
 
-    protected ObjectPool<BulletBase> _bulletPool;
     protected bool _canShoot;
     protected int _bulletsLeft;
     protected float _timeToShootNext;
@@ -37,7 +36,6 @@ public abstract class WeaponBase : MonoBehaviour
     
     private void Start()
     {
-        _bulletPool = new ObjectPool<BulletBase>();
         _bulletsLeft = _bulletsAmount;
         EnableShooting();
     }

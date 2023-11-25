@@ -11,13 +11,13 @@ public class CannonWeapon : WeaponBase
     {
         if (_canShoot && Time.time >= _timeToShootNext && _bulletsLeft > 0 )
         {
-            _bulletShot = _bulletPool.TryGetObject();
+            _bulletShot = PoolManager.Instance.BulletsPool.TryGetObject();
 
             if (_bulletShot == null)
             {
                 _bulletShot = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
                 _bulletShot.InitBullet(_bulletShootForce,_bulletLifespan, _damage, _firePoint.up);
-                _bulletPool.AddObjectInPool(_bulletShot);
+                PoolManager.Instance.BulletsPool.AddObjectInPool(_bulletShot);
             }
             else
             {
