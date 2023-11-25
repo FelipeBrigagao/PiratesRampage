@@ -7,15 +7,7 @@ public class CannonWeapon : WeaponBase
 {
     private BulletBase _bulletShot;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Shoot();
-        }
-    }
-
-    protected override void Shoot()
+    public override void Shoot()
     {
         if (_canShoot && Time.time >= _timeToShootNext && _bulletsLeft > 0 )
         {

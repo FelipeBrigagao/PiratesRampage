@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [Header("Actions references")] 
+    [SerializeField] private List<ActionCode> _actionCodes;
+
     private Player _player;
     private bool _canReceiveInput;
 
@@ -20,6 +23,7 @@ public class PlayerInput : MonoBehaviour
         if (_canReceiveInput)
         {
             ReceiveMovementInput();
+            CheckAction();
         }
     }
 
@@ -30,6 +34,20 @@ public class PlayerInput : MonoBehaviour
        _player.PlayerMovement.ReceiveInput(_moveInput);
     }
 
+    private void CheckAction()
+    {
+        foreach(ActionCode ac in _actionCodes)
+        {
+            if(Input.GetKeyDown(ac.ActionKey))
+                CallAction(ac.WeaponId);
+        }
+    }
+    
+    private void CallAction(string weaponId)
+    {
+        _player.Player_Action.CheckWeapon(weaponId);
+    }
+    
     public void EnableReceiveInput()
     {
         _canReceiveInput = true;
