@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class PoolManager : SingletonBase<PoolManager>
 {
-    public ObjectPool<BulletBase> BulletsPool;
+    private ObjectPool<BulletBase> _bulletsPool;
+
+    public ObjectPool<BulletBase> BulletsPool => _bulletsPool;
+
 
     private void Start()
     {
-        BulletsPool = new ObjectPool<BulletBase>();
+        _bulletsPool = new ObjectPool<BulletBase>();
     }
 }

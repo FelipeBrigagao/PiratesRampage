@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Bullet
+  - Wall
+  - Enemy
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 4216435989
+    locked: 0
+  - name: Effects
+    uniqueID: 668187775
     locked: 0

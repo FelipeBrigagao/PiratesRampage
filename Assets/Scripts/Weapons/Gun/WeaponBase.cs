@@ -16,7 +16,8 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] protected int _damage;
     [SerializeField] protected float _bulletShootForce;
     [SerializeField] protected float _bulletLifespan;
-
+    [SerializeField] protected LayerMask _hittableLayers;
+    
     protected bool _canShoot;
     protected int _bulletsLeft;
     protected float _timeToShootNext;

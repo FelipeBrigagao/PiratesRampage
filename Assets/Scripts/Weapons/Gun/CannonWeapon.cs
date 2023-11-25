@@ -16,14 +16,14 @@ public class CannonWeapon : WeaponBase
             if (_bulletShot == null)
             {
                 _bulletShot = Instantiate(_bulletPrefab, _firePoint.position, _firePoint.rotation);
-                _bulletShot.InitBullet(_bulletShootForce,_bulletLifespan, _damage, _firePoint.up);
+                _bulletShot.InitBullet(_bulletShootForce,_bulletLifespan, _damage, _firePoint.up, _hittableLayers);
                 PoolManager.Instance.BulletsPool.AddObjectInPool(_bulletShot);
             }
             else
             {
                 _bulletShot.transform.SetPositionAndRotation(_firePoint.position, _firePoint.rotation);
                 _bulletShot.gameObject.SetActive(true);
-                _bulletShot.InitBullet(_bulletShootForce,_bulletLifespan, _damage, _firePoint.up);
+                _bulletShot.InitBullet(_bulletShootForce,_bulletLifespan, _damage, _firePoint.up, _hittableLayers);
             }
             
             CallOnShoot();
