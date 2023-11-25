@@ -7,6 +7,18 @@ public class CannonWeapon : WeaponBase
 {
     private BulletBase _bulletShot;
 
+    public void SetCannonValues(BulletBase bulletPrefab, int bulletsAmount, float reloadTime, float fireRate, int damage, float bulletShootForce, float bulletLifespan, LayerMask hittableLayers)
+    {
+        _bulletPrefab = bulletPrefab;
+        _bulletsAmount = bulletsAmount;
+        _reloadTime = reloadTime;
+        _fireRate = fireRate;
+        _damage = damage;
+        _bulletShootForce = bulletShootForce;
+        _bulletLifespan = bulletLifespan;
+        _hittableLayers = hittableLayers;
+    }
+    
     public override void Shoot()
     {
         if (_canShoot && Time.time >= _timeToShootNext && _bulletsLeft > 0 )

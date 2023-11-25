@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1639193870111247511}
   - component: {fileID: 7114177631676548667}
   - component: {fileID: 7491957014510924137}
-  m_Layer: 0
+  - component: {fileID: 5607509581327886868}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +168,28 @@ MonoBehaviour:
   _rotateSpeed: 50
   _driftAmount: 0.6
   dragAmount: 3
+--- !u!114 &5607509581327886868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877012495331807906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce42fb07e740fba4a8b057d072b18d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 30
+  OnHealthMax:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6733033947320693432
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +237,10 @@ PrefabInstance:
       propertyPath: _reloadTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3832831341324017231, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 4401846478978497927, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.248
@@ -258,9 +285,21 @@ PrefabInstance:
       propertyPath: _reloadTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6998631093524558257, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634226411681278059, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 8809892104273539099, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: _reloadTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809892104273539099, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 8902690893009620859, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: m_Name
@@ -361,6 +400,10 @@ PrefabInstance:
       propertyPath: _reloadTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3832831341324017231, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 4401846478978497927, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.26
@@ -405,9 +448,21 @@ PrefabInstance:
       propertyPath: _reloadTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6998631093524558257, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634226411681278059, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 8809892104273539099, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: _reloadTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809892104273539099, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 8902690893009620859, guid: 0c81e5bcc7b24cf4aa99725e40298c2f, type: 3}
       propertyPath: m_Name
@@ -442,9 +497,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1392327741080289678}
     m_Modifications:
+    - target: {fileID: 85633739604969488, guid: c77c54ea0d0b55648903a36066ad7e33, type: 3}
+      propertyPath: _hittableLayers.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 1846227973600587098, guid: c77c54ea0d0b55648903a36066ad7e33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0004310012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1846227973600587098, guid: c77c54ea0d0b55648903a36066ad7e33, type: 3}
       propertyPath: m_LocalPosition.y

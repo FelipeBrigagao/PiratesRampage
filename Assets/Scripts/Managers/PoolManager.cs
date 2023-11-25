@@ -13,6 +13,7 @@ public class PoolManager : SingletonBase<PoolManager>
     private void Start()
     {
         _bulletsPool = new ObjectPool<BulletBase>();
+        _effectPools = new Dictionary<string, ObjectPool<Effect>>();
     }
 
     public ObjectPool<Effect> GetAEffectPool(string key)

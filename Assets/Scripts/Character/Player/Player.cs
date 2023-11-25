@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _playerMovement = GetComponent<MovementBase>();
         _playerAction = GetComponent<PlayerAction>();
+        _playerHealth = GetComponent<HealthBase>();
         
         Init();
     }

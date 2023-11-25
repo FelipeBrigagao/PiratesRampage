@@ -169,3 +169,6 @@ MonoBehaviour:
   _damage: 5
   _bulletShootForce: 5
   _bulletLifespan: 5
+  _hittableLayers:
+    serializedVersion: 2
+    m_Bits: 128
