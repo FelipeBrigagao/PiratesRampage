@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af872eb63b89ed489fa8f3735c34ade, type: 3}
+  m_Name: RedFlag_33
+  m_EditorClassIdentifier: 
+  HealthPercentage: 0.33
+  DeterioratedParts:
+  - PartId: HullLarge
+    Part: {fileID: 21300000, guid: 2a1febda6bde7ab4f8b31e76e8f3a632, type: 3}
+  - PartId: SailSmall
+    Part: {fileID: 21300000, guid: 2df1389145e5c2b41a71b99b2e64b83a, type: 3}
+  - PartId: SailLarge
+    Part: {fileID: 21300000, guid: c8230fcb61d1694478c820e244a216ce, type: 3}
+  Level: 3
