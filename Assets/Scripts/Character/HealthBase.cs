@@ -31,10 +31,10 @@ public class HealthBase : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
-        _currentHealth = CurrentHealth - damage;
+        _currentHealth -= damage;
         OnTakeDamage?.Invoke();
 
-        if (CurrentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             Die();
         }

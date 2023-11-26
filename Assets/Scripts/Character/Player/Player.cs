@@ -10,16 +10,16 @@ public class Player : MonoBehaviour
     private MovementBase _playerMovement;
     private HealthBase _playerHealth;
 
-    public MovementBase PlayerMovement => _playerMovement;
     public PlayerInput Player_Input => _playerInput;
     public PlayerAction Player_Action => _playerAction;
+    public MovementBase PlayerMovement => _playerMovement;
     public HealthBase PlayerHealth => _playerHealth;
 
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
-        _playerMovement = GetComponent<MovementBase>();
         _playerAction = GetComponent<PlayerAction>();
+        _playerMovement = GetComponent<MovementBase>();
         _playerHealth = GetComponent<HealthBase>();
         
         Init();

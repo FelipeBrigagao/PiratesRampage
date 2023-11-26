@@ -70,6 +70,10 @@ public class BulletBase : MonoBehaviour
         {
             health.TakeDamage(_damage);
         }
+        else
+        {
+            Debug.Log("No health");
+        }
     }
     
     private void StopBullet()
