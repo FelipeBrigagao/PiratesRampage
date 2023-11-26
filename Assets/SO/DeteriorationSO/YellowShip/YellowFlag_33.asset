@@ -20,4 +20,6 @@ MonoBehaviour:
     Part: {fileID: 21300000, guid: e6b907cc641bbf2449c210a5603bf702, type: 3}
   - PartId: SailLarge
     Part: {fileID: 21300000, guid: 2988a18b5709118429906d29e29812b6, type: 3}
+  - PartId: Nest
+    Part: {fileID: 21300000, guid: a64ba6091ae56e5499179b78096c75dc, type: 3}
   Level: 3

@@ -9,11 +9,11 @@ public class BulletBase : MonoBehaviour
 {
     [SerializeField]private Rigidbody2D _rigidbody;
     
+    private int _damage;
+    private LayerMask _layers;
     private float _shootForce;
     private float _lifetime;
-    private int _damage;
     private Vector2 _moveDirection;
-    private LayerMask _layers;
 
     private bool _impacted;
     
@@ -69,10 +69,6 @@ public class BulletBase : MonoBehaviour
         if (collider.TryGetComponent<HealthBase>(out HealthBase health))
         {
             health.TakeDamage(_damage);
-        }
-        else
-        {
-            Debug.Log("No health");
         }
     }
     

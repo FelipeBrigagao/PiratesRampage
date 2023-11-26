@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7114177631676548667}
   - component: {fileID: 7491957014510924137}
   - component: {fileID: 5607509581327886868}
+  - component: {fileID: 8581098569442533786}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -183,13 +184,63 @@ MonoBehaviour:
   _maxHealth: 30
   OnHealthMax:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8581098569442533786}
+        m_TargetAssemblyTypeName: Deterioration, Assembly-CSharp
+        m_MethodName: CheckForDeterioration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTakeDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8581098569442533786}
+        m_TargetAssemblyTypeName: Deterioration, Assembly-CSharp
+        m_MethodName: CheckForDeterioration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8581098569442533786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877012495331807906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04e7df9db43fe6468880d315ed231af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deteriorationParts:
+  - PartId: HullLarge
+    Part: {fileID: 5285355131324087917}
+  - PartId: SailSmall
+    Part: {fileID: 3010314734089891792}
+  - PartId: SailLarge
+    Part: {fileID: 1770338926762439543}
+  - PartId: Nest
+    Part: {fileID: 2305334306207917895}
+  _deteriorationInfo:
+  - {fileID: 11400000, guid: 1dd8e43af0c5da44e9de9105e65ad838, type: 2}
+  - {fileID: 11400000, guid: bb7102975c5627b4a8f3b102c3580041, type: 2}
+  - {fileID: 11400000, guid: 1a48c6f4fc100f54db4d5dac1cf19570, type: 2}
+  - {fileID: 11400000, guid: 29a49683953c0bd44857be07c18997ca, type: 2}
 --- !u!1 &6733033947320693432
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,9 +434,29 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
+--- !u!212 &1770338926762439543 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1006045967191097299, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
+  m_PrefabInstance: {fileID: 1542395623798148260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2305334306207917895 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 763784494666771427, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
+  m_PrefabInstance: {fileID: 1542395623798148260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3010314734089891792 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4368907155027682164, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
+  m_PrefabInstance: {fileID: 1542395623798148260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4496564157560621624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3098672131387197084, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
+  m_PrefabInstance: {fileID: 1542395623798148260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5285355131324087917 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6647008317535630025, guid: e11d782e95b6a9844bb38c1a1c6cc471, type: 3}
   m_PrefabInstance: {fileID: 1542395623798148260}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6950105664468517921

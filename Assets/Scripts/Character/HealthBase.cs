@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 public class HealthBase : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class HealthBase : MonoBehaviour
 
     private int _currentHealth;
     private bool _isDead = false;
+    private bool _canLoseHealth = true;
 
     public UnityEvent OnHealthMax;
     public UnityEvent OnTakeDamage;
@@ -31,6 +33,8 @@ public class HealthBase : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
+        if (_isDead || !_canLoseHealth) return;
+        
         _currentHealth -= damage;
         OnTakeDamage?.Invoke();
 
@@ -40,9 +44,27 @@ public class HealthBase : MonoBehaviour
         }
     }
 
+    public void IntantDie()
+    {
+        if (_isDead || !_canLoseHealth) return;
+        TakeDamage(_maxHealth);
+    }
+
     public void Die()
     {
+        if (_isDead || !_canLoseHealth) return;
+     
         _isDead = true;
         OnDie?.Invoke();
+    }
+
+    public void EnableLoseHealth()
+    {
+        _canLoseHealth = true;
+    }
+    
+    public void DisableLoseHealth()
+    {
+        _canLoseHealth = false;
     }
 }

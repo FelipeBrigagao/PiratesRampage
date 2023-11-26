@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1af872eb63b89ed489fa8f3735c34ade, type: 3}
-  m_Name: YellowFlag_100
+  m_Name: BlueFlag_66
   m_EditorClassIdentifier: 
-  HealthPercentage: 1
+  HealthPercentage: 0.66
   DeterioratedParts:
   - PartId: HullLarge
-    Part: {fileID: 21300000, guid: 8d9b4e870e7809142917983d15f3c974, type: 3}
+    Part: {fileID: 21300000, guid: b2a9565ecd8df9e4989c788813e833b4, type: 3}
   - PartId: SailSmall
-    Part: {fileID: 21300000, guid: 5c52852bc39617d4f821f9b6de3c1fca, type: 3}
+    Part: {fileID: 21300000, guid: 70b93963a1bcde64f9609f48b43af6ad, type: 3}
   - PartId: SailLarge
-    Part: {fileID: 21300000, guid: f00e9defc442f9a43bf93cc7101e06d2, type: 3}
+    Part: {fileID: 21300000, guid: 1143b007e428bfa469f52bc8fe6bf734, type: 3}
   - PartId: Nest
     Part: {fileID: 21300000, guid: a64ba6091ae56e5499179b78096c75dc, type: 3}
-  Level: 1
+  Level: 2

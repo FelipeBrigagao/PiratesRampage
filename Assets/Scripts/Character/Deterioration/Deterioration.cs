@@ -10,12 +10,11 @@ public class Deterioration : MonoBehaviour
     [SerializeField] private List<DeteriorationInfoSO> _deteriorationInfo;
 
     private Dictionary<string, SpriteRenderer> _deteriorationPartsDict = new Dictionary<string, SpriteRenderer>();
-
-    private int _currentLevel = 0;
-    
     private HealthBase _health;
 
-    private void Start()
+    private int _currentLevel = 0;
+
+    private void Awake()
     {
         _health = GetComponent<HealthBase>();
 
@@ -36,6 +35,7 @@ public class Deterioration : MonoBehaviour
             {
                 _currentLevel = di.Level;
                 ChangeParts(di.DeterioratedParts);
+                return;
             }
         }
     }
@@ -49,5 +49,10 @@ public class Deterioration : MonoBehaviour
                 _deteriorationPartsDict[p.PartId].sprite = p.Part;
             }
         }
+    }
+
+    public void SetDeteriorarionInfo(List<DeteriorationInfoSO> deteriorationInfo)
+    {
+        _deteriorationInfo = deteriorationInfo;
     }
 }
