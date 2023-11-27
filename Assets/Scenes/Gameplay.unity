@@ -22583,6 +22583,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1615131327641496260, guid: 5e3e307f2f6992b438347042308cb41c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615131327641496260, guid: 5e3e307f2f6992b438347042308cb41c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22622,7 +22630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100295128545590742, guid: 466eae6778787034d8f5d9e322a3e1bd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 225.2991
+      value: 251.6504
       objectReference: {fileID: 0}
     - target: {fileID: 3100295128545590742, guid: 466eae6778787034d8f5d9e322a3e1bd, type: 3}
       propertyPath: m_SizeDelta.y
@@ -22658,11 +22666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100295128545590742, guid: 466eae6778787034d8f5d9e322a3e1bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 33.099976
+      value: 33.100098
       objectReference: {fileID: 0}
     - target: {fileID: 3100295128545590742, guid: 466eae6778787034d8f5d9e322a3e1bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -33.76
+      value: -33.76001
       objectReference: {fileID: 0}
     - target: {fileID: 3100295128545590742, guid: 466eae6778787034d8f5d9e322a3e1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
