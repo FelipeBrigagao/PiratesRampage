@@ -20,9 +20,10 @@ public class HealthBase : MonoBehaviour
     public int MaxHealth => _maxHealth;
     public int CurrentHealth => _currentHealth;
 
-    private void Start()
+    public void Init()
     {
         SetMaxHealth();
+        EnableLoseHealth();
     }
 
     public void SetMaxHealth()
@@ -44,7 +45,7 @@ public class HealthBase : MonoBehaviour
         }
     }
 
-    public void IntantDie()
+    public void InstantDie()
     {
         if (_isDead || !_canLoseHealth) return;
         TakeDamage(_maxHealth);

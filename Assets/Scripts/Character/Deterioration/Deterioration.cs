@@ -14,7 +14,7 @@ public class Deterioration : MonoBehaviour
 
     private int _currentLevel = 0;
 
-    private void Awake()
+    public void Init()
     {
         _health = GetComponent<HealthBase>();
 
@@ -35,7 +35,6 @@ public class Deterioration : MonoBehaviour
             {
                 _currentLevel = di.Level;
                 ChangeParts(di.DeterioratedParts);
-                return;
             }
         }
     }

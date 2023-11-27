@@ -29,6 +29,7 @@ public abstract class MovementBase : MonoBehaviour
     
     public void DisableMovement()
     {
+        _input = Vector2.zero;
         _canMove = false;
     }
     

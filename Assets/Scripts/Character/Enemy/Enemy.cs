@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private EnemyAction _enemyAction;
-    private EnemyBehaviour _enemyBehaviour;
-    private HealthBase _healthBase;
-    private MovementBase _movementBase;
-    private Deterioration _deterioration;
+    [SerializeField] private EnemyAction _enemyAction;
+    [SerializeField] private EnemyBehaviour _enemyBehaviour;
+    [SerializeField] private HealthBase _healthBase;
+    [SerializeField] private MovementBase _movementBase;
+    [SerializeField] private Deterioration _deterioration;
 
     public EnemyAction Action => _enemyAction;
-    public EnemyBehaviour EnemyBehaviour1 => _enemyBehaviour;
+    public EnemyBehaviour Enemy_Behaviour => _enemyBehaviour;
     public HealthBase Health_Base => _healthBase;
     public MovementBase Movement_Base => _movementBase;
     public Deterioration Deterioration => _deterioration;
 
 
-    private void Start()
+    private void Awake()
     {
         _enemyAction = GetComponent<EnemyAction>();
         _enemyBehaviour = GetComponent<EnemyBehaviour>();
@@ -31,11 +31,16 @@ public class Enemy : MonoBehaviour
 
     public void Init()
     {
+        _enemyBehaviour.EnableBehaviours();
         _movementBase.EnableMovement();
+        _deterioration.Init();
+        _healthBase.Init();
     }
 
     public void StopEnemy()
     {
-        
+        _enemyBehaviour.DisableBehaviours();
+        _movementBase.DisableMovement();
+        _healthBase.DisableLoseHealth();
     }
 }

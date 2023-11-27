@@ -32,12 +32,15 @@ public class Player : MonoBehaviour
     {
         _playerInput.EnableReceiveInput();
         _playerMovement.EnableMovement();
-        _playerHealth.SetMaxHealth();
+        _deterioration.Init();
+        _playerHealth.Init();
     }
 
     public void StopPlayer()
     {
-        
+        _playerInput.DisableReceiveInput();
+        _playerMovement.DisableMovement();
+        _playerHealth.DisableLoseHealth();
     }
 
 }
