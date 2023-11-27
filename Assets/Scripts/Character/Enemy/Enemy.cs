@@ -19,13 +19,22 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        _healthBase.OnDie.AddListener(PointsManager.Instance.AddPoints);
-        PlayerManager.Instance.OnPlayerDeath.AddListener(StopEnemy);
+        if(DataManager.Instance)
+            _healthBase.OnDie.AddListener(DataManager.Instance.AddPoints);
+        if(PlayerManager.Instance)
+            PlayerManager.Instance.OnPlayerDeath.AddListener(StopEnemy);
+        if(GameManager.Instance)
+            GameManager.Instance.OnGameEnded.AddListener(StopEnemy);
     }
     
     private void OnDisable()
     {
-        _healthBase.OnDie.RemoveListener(PointsManager.Instance.AddPoints);
+        if(DataManager.Instance)
+            _healthBase.OnDie.RemoveListener(DataManager.Instance.AddPoints);
+        if(PlayerManager.Instance)
+            PlayerManager.Instance.OnPlayerDeath.RemoveListener(StopEnemy);
+        if(GameManager.Instance)
+            GameManager.Instance.OnGameEnded.RemoveListener(StopEnemy);
     }
 
     private void Awake()

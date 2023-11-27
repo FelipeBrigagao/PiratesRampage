@@ -17,7 +17,23 @@ public class Player : MonoBehaviour
     public HealthBase PlayerHealth => _playerHealth;
     public Deterioration Deterioration => _deterioration;
 
-    private void Start()
+    private void OnEnable()
+    { 
+        if(PlayerManager.Instance)
+            _playerHealth.OnDie.AddListener(PlayerManager.Instance.OnPlayerDeath.Invoke);
+        if(GameManager.Instance)
+            GameManager.Instance.OnGameEnded.AddListener(StopPlayer);
+    }
+    
+    private void OnDisable()
+    {
+        if(PlayerManager.Instance)
+            _playerHealth.OnDie.RemoveListener(PlayerManager.Instance.OnPlayerDeath.Invoke);
+        if(GameManager.Instance)
+            GameManager.Instance.OnGameEnded.AddListener(StopPlayer);
+    }
+
+    private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
         _playerAction = GetComponent<PlayerAction>();

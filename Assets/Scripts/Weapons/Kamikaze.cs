@@ -25,12 +25,13 @@ public class Kamikaze : MonoBehaviour
 
     private void DoKamizaze(Collision2D other)
     {
+        OnKamikaze?.Invoke();
+        
         if (other.gameObject.TryGetComponent<HealthBase>(out HealthBase health))
         {
             health.TakeDamage(_damage);
         }
         
-        OnKamikaze?.Invoke();
     }
 
     public void EnableKamikaze()
