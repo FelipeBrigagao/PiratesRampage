@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class BulletBase : MonoBehaviour
 {
     [SerializeField]private Rigidbody2D _rigidbody;
+    [SerializeField] private TrailRenderer _trail;
     
     private int _damage;
     private LayerMask _layers;
@@ -38,6 +39,7 @@ public class BulletBase : MonoBehaviour
 
     public void InitBullet(float shootForce, float lifetime, int damage, Vector2 direction, LayerMask layers)
     {
+        _trail.emitting = true;
         _impacted = false;
         _shootForce = shootForce;
         _lifetime = lifetime;

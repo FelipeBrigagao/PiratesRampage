@@ -47,6 +47,9 @@ MonoBehaviour:
   OnGameEnded:
     m_PersistentCalls:
       m_Calls: []
+  OnStartGameplay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4344035627577748763
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea74074ce8f632349b835402d7f3d57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnRate: 2
+  _gameTime: 1
+  OnPointsChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4472478378168601800
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7789025373151482851}
+  - component: {fileID: 5574098349483869742}
   m_Layer: 0
   m_Name: ManagersDontDestroy
   m_TagString: ManagersDontDestroy
@@ -125,6 +134,18 @@ Transform:
   - {fileID: 3250128409320434263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5574098349483869742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472478378168601800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e0e6d1db1c2f54eb92f93160f8a8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4787903701975905143
 GameObject:
   m_ObjectHideFlags: 0
