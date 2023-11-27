@@ -17,6 +17,16 @@ public class Enemy : MonoBehaviour
     public MovementBase Movement_Base => _movementBase;
     public Deterioration Deterioration => _deterioration;
 
+    private void OnEnable()
+    {
+        _healthBase.OnDie.AddListener(PointsManager.Instance.AddPoints);
+        PlayerManager.Instance.OnPlayerDeath.AddListener(StopEnemy);
+    }
+    
+    private void OnDisable()
+    {
+        _healthBase.OnDie.RemoveListener(PointsManager.Instance.AddPoints);
+    }
 
     private void Awake()
     {

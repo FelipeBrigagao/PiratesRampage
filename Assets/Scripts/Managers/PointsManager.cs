@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PointsManager : MonoBehaviour
+public class PointsManager : SingletonBase<PointsManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int _points;
+    public int Points => _points;
 
-    // Update is called once per frame
-    void Update()
+    public void AddPoints()
     {
-        
+        _points = Points + 1;
     }
 }
