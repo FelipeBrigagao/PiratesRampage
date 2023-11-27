@@ -29,9 +29,10 @@ public class EnemyBehaviour : MonoBehaviour
     private bool _goingToPosition;
     private bool _canBehave;
     private float _crossProduct;
-    private float _crossProductUp;
-    private float _crossProductRight;
-    private float _crossProductLeft;
+    private float _angle;
+    private float _angleUp;
+    private float _angleRight;
+    private float _angleLeft;
     private float _rotation;
     private float _going;
 
@@ -137,34 +138,33 @@ public class EnemyBehaviour : MonoBehaviour
     {
         _targetPosition = _player.transform.position;
         _direction = (_targetPosition - (Vector2)transform.position).normalized;
+
+        _angleUp = Vector2.Angle(_direction,transform.up);
+        _angleRight = Vector2.Angle(_direction,transform.right);
+        _angleLeft = Vector2.Angle(_direction,-transform.right);
         
-        _crossProductUp = Vector3.Cross(_direction, transform.up).z;
-        _crossProductRight = Vector3.Cross(_direction, transform.right).z;
-        _crossProductLeft = Vector3.Cross(_direction, -transform.right).z;
-
-       
-        if (Mathf.Abs(_crossProductRight) < Mathf.Abs(_crossProductUp))
+        if (_angleUp < _angleRight && _angleUp < _angleLeft)
         {
-            if (_crossProductRight > 0 && _crossProductLeft < 0)
-            {
-                _crossProduct = _crossProductRight;
-                _currentSide = _cannonSides.First(x => x.Side.Equals("Left"));
-
-            }else if (_crossProductLeft > 0 && _crossProductRight < 0)
-            {
-                _crossProduct = _crossProductLeft;
-                _currentSide = _cannonSides.First(x => x.Side.Equals("Right"));
-            }
-        }
-        else
-        {
-            _crossProduct = _crossProductUp;
+            _angle = _angleUp;
+            _crossProduct = _direction.x * transform.up.y - _direction.y * transform.up.x;
             _currentSide = _cannonSides.First(x => x.Side.Equals("Up"));
+        }
+        else if (_angleRight < _angleUp && _angleRight < _angleLeft)
+        {
+            _angle = _angleRight;
+            _crossProduct = _direction.x * transform.right.y - _direction.y * transform.right.x;
+            _currentSide = _cannonSides.First(x => x.Side.Equals("Right"));
+        }
+        else if (_angleLeft < _angleUp && _angleLeft < _angleRight)
+        {
+            _angle = _angleLeft;
+            _crossProduct = _direction.x * -transform.right.y - _direction.y * -transform.right.x;;
+            _currentSide = _cannonSides.First(x => x.Side.Equals("Left"));
         }
         
         _rotation = Mathf.Sign(_crossProduct);
         
-        if (Mathf.Abs(_crossProduct) < 0.1f)
+        if (Mathf.Abs(_crossProduct) < 0.1f && _angle <= 10f)
         {
             _rotation = 0;
             _enemy.Action.CheckWeapon(_currentSide.CannonId);
@@ -184,10 +184,11 @@ public class EnemyBehaviour : MonoBehaviour
         else
         {
             _direction = (_targetPosition - (Vector2)transform.position).normalized;
-            _crossProduct = Vector3.Cross(_direction, transform.up).z;
+            _angle = Vector2.Angle(_direction, transform.up);
+            _crossProduct = _direction.x * transform.up.y - _direction.y * transform.up.x;
             _rotation = Mathf.Sign(_crossProduct);
             
-            if (Mathf.Abs(_crossProduct) < 0.1f)
+            if (Mathf.Abs(_crossProduct) < 0.1f && _angle <= 10f)
             {
                 _rotation = 0;
                 _going = 1;
