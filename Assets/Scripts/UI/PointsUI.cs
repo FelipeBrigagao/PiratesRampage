@@ -21,6 +21,11 @@ public class PointsUI : MonoBehaviour
             DataManager.Instance.OnPointsChange.RemoveListener(UpdateText);
     }
 
+    private void Awake()
+    {
+        UpdateText(DataManager.Instance.Points);
+    }
+
     public void UpdateText(int points)
     {
         _text.text = points.ToString();

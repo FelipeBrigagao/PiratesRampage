@@ -20,7 +20,7 @@ public class EndGamePanel : MonoBehaviour
     private void OnEnable()
     {
         if(GameManager.Instance)
-            GameManager.Instance.OnGameEnded.AddListener(GameEndedTimer);
+            GameManager.Instance.OnGameEnded.AddListener(GameEndedByTimer);
         if(PlayerManager.Instance)
             PlayerManager.Instance.OnPlayerDeath.AddListener(GameEndedPlayerDied);
     }
@@ -28,12 +28,12 @@ public class EndGamePanel : MonoBehaviour
     private void OnDisable()
     {
         if(GameManager.Instance)
-            GameManager.Instance.OnGameEnded.RemoveListener(GameEndedTimer);
+            GameManager.Instance.OnGameEnded.RemoveListener(GameEndedByTimer);
         if(PlayerManager.Instance)
             PlayerManager.Instance.OnPlayerDeath.RemoveListener(GameEndedPlayerDied);
     }
 
-    private void GameEndedTimer()
+    private void GameEndedByTimer()
     {
         if (_playerDied) return;
         _text.color = _timeEndedColor;

@@ -8,9 +8,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 899040427287105274, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
+      propertyPath: _deteriorationInfo.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 899040427287105274, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
+      propertyPath: _deteriorationInfo.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f6da8b461f891f544827f80ab156c616, type: 2}
+    - target: {fileID: 899040427287105274, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
+      propertyPath: _deteriorationInfo.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f4ee75386b07ee946b48cd6c54d2fa90, type: 2}
+    - target: {fileID: 899040427287105274, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
+      propertyPath: _deteriorationInfo.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b60956798ed8b44c8ae3edc938b98f9, type: 2}
+    - target: {fileID: 899040427287105274, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
+      propertyPath: _deteriorationInfo.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c1c666e34be497747abbdcabf48e5292, type: 2}
     - target: {fileID: 6622356505789487128, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: EnemyShooter
       objectReference: {fileID: 0}
     - target: {fileID: 8042610302229113575, guid: b65ba5670e6a07c43ab5cda0d62b93bc, type: 3}
       propertyPath: m_LocalPosition.x
